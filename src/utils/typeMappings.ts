@@ -1,0 +1,16 @@
+export const typeMappings: Record<string, string> = {
+  string: 'String',
+  number: 'double',
+  boolean: 'bool',
+  any: 'dynamic',
+  void: 'void',
+  null: 'Null',
+  undefined: 'dynamic',
+  'Array<string>': 'List<String>',
+  'Array<number>': 'List<double>',
+  'Array<boolean>': 'List<bool>',
+  'Array<any>': 'List<dynamic>',
+  object: 'Map<String, dynamic>',
+  Date: 'DateTime',
+  'string[]': 'List<String>',
+};
