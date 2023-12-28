@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import * as fs from 'fs';
 import { typeMappings } from '../utils/typeMappings';
 import { FileType, dir, inputFileName } from '../constants/common';
+import HttpStatusCode from '../constants/httpStatusCode';
 
 class ConverterController {
   convertTypeScriptToDart(req: Request, res: Response) {
@@ -82,10 +83,10 @@ class ${className} {
 
       console.log(`Dart code has been written to ${outputFileName}`);
 
-      res.status(200).json({ message: 'Dart code generated successfully' });
+      res.status(HttpStatusCode.OK).json({ message: 'Dart code generated successfully' });
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error: 'Internal Server Error' });
+      res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({ error: 'Internal Server Error' });
     }
   }
 }
