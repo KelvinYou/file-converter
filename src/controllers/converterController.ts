@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import * as fs from 'fs';
 import { typeMappings } from '../utils/typeMappings';
-import { inputFileName, outputFileName } from '../constants/common';
+import { FileType, dir, inputFileName } from '../constants/common';
 
 class ConverterController {
   convertTypeScriptToDart(req: Request, res: Response) {
@@ -76,7 +76,7 @@ class ${className} {
   };
 }
 `;
-
+      const outputFileName = `${dir}/${className.toLowerCase()}.${FileType.Dart}`
       // Write Dart code to a file
       fs.writeFileSync(outputFileName, dartCode, 'utf8');
 

@@ -1,4 +1,10 @@
-const dir = "files";
+export const dir = "files";
 
 export const inputFileName = `${dir}/input.ts`;
-export const outputFileName = `${dir}/output.dart`;
+
+export enum FileType {
+  Dart = 'dart',
+  TypeScript = 'ts',
+  JavaScript = 'js',
+  Go = 'go',
+}
